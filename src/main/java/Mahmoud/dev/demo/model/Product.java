@@ -1,4 +1,4 @@
-package Mahmoud.dev.demo.repository;
+package Mahmoud.dev.demo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
