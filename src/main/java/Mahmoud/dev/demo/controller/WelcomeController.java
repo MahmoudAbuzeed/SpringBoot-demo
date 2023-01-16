@@ -16,6 +16,6 @@ public class WelcomeController {
 
     @GetMapping("/welcome")
     public String welcome(@RequestParam(defaultValue = "Stranger") String name){
-        return name;
+        return welcomeService.getWelcomeMessage(name);
     }
 }
