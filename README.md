@@ -54,8 +54,8 @@ Will add additional notes about how to deploy this on a live system
 ## To DO 
 
 ```
-Connect With any Database
-Create Full Rest API and CRUD operations
+Connect With any Database ...Done
+Create Full Rest API and CRUD operations ...Done 
 Create Docker Files and configure kubernetes
 Create Swagger for API documentaion
 ```
