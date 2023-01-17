@@ -21,10 +21,6 @@ public class ProductController {
         return productService.saveProduct(product);
     }
 
-    @PostMapping("/addProducts")
-    public List<Product> addProducts(@RequestBody List<Product> products) {
-        return productService.saveProducts(products);
-    }
 
     @GetMapping("/products")
     public List<Product> findAllProducts() {
