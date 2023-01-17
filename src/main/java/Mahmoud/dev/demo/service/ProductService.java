@@ -3,43 +3,46 @@ package Mahmoud.dev.demo.service;
 import Mahmoud.dev.demo.model.Product;
 import Mahmoud.dev.demo.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProductService {
+
     @Autowired
-    private ProductRepository repository;
+    private ProductRepository productRepository;
 
     public Product saveProduct(Product product) {
-        return repository.save(product);
+        return productRepository.save(product);
     }
 
     public List<Product> saveProducts(List<Product> products) {
-        return repository.saveAll(products);
+        return productRepository.saveAll(products);
     }
 
     public List<Product> getProducts() {
-        return repository.findAll();
+        return productRepository.findAll();
     }
 
     public Product getProductById(int id) {
-        return repository.findById(id).orElse(null);
+        return productRepository.findById(id).orElse(null);
     }
 
     public Product getProductByName(String name) {
-        return repository.findByName(name);
+        return productRepository.findByName(name);
     }
 
     public String deleteProduct(int id) {
-        repository.deleteById(id);
+        productRepository.deleteById(id);
         return "product removed !! " + id;
     }
 
     public Product updateProduct(Product product) {
-        Product existingProduct = repository.findById(product.getId()).orElse(null);
+        Product existingProduct = productRepository.findById(product.getId()).orElse(null);
         existingProduct.setName(product.getName());
         existingProduct.setQuantity(product.getQuantity());
         existingProduct.setPrice(product.getPrice());
-        return repository.save(existingProduct);
+        return productRepository.save(existingProduct);
     }
 }
